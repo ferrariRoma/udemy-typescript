@@ -7,7 +7,7 @@
 // Second, Define a set of fields (values) and ***methods (functions)*** to represent a ‘thing’
 
 class Vehicle {
-  constructor(protected color: string) {}
+  constructor(public color: string) {}
 
   protected honk(): void {
     console.log('beep');
@@ -18,6 +18,11 @@ const vehicle = new Vehicle('Orange');
 console.log(vehicle.color);
 
 class Car extends Vehicle {
+  constructor(public wheels: number, color: string) {
+    super(color);
+    this.wheels = wheels;
+  }
+
   private drive(): void {
     console.log('vroom');
   }
@@ -28,5 +33,5 @@ class Car extends Vehicle {
   }
 }
 
-const car = new Car('blue');
+const car = new Car(4, 'blue');
 car.startDrivingProcess();
