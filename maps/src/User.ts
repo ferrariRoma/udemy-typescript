@@ -2,8 +2,8 @@ import { faker } from '@faker-js/faker';
 
 export class User {
   constructor(
-    public name = faker.name.firstName(),
-    public location = {
+    private name = faker.name.firstName(),
+    private location = {
       lat: parseFloat(faker.address.latitude()),
       lng: parseFloat(faker.address.longitude()),
     }
